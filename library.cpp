@@ -120,7 +120,7 @@ string ArmstrongNumber(int number) {
     return res;
 }
 
-int Lagranz(double **matrix, int number) {
+double Lagranz(double **matrix, int number) {
     double t, sum = 0, calc = 1;
     for (int j = 0; j < number; j++) {
         for (int i = 0; i < 2; i++) {
@@ -133,3 +133,46 @@ int Lagranz(double **matrix, int number) {
     return sum;
 }
 
+
+string ThreeOfPif() {
+    int j, counter = 0;
+    string res;
+    double candidate, sqrnbr;
+    for (int i = 400; i <= 500; i++) {
+        for (j = i; j <= 500; j++) {
+            candidate = i * i + j * j;
+        }
+        sqrnbr = sqrt(candidate);
+        if (candidate / sqrnbr == sqrnbr) {
+            res+=to_string(i) + " and " + to_string(j) + " and " + to_string(sqrnbr) + " ";
+            counter++;
+        }
+    }
+
+    return res;
+}
+
+vector<int>  find_dividers(int x) {
+    vector<int> dividers;
+
+    for (int i = 1; i <= sqrt(x); i++) {
+        if (x % i == 0) {
+            dividers.push_back(i);
+            if (i * i != x) {
+                dividers.push_back(x / i);
+            }
+        }
+    }
+
+    return dividers;
+}
+
+bool is_prime(int x) {
+    for (int i = 2; i <= sqrt(x); i++) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
