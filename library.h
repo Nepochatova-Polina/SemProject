@@ -1,6 +1,5 @@
 #ifndef LIBRARY_LIBRARY_H
 #define LIBRARY_LIBRARY_H
-
 #include <vector>
 #include "string"
 
@@ -25,5 +24,13 @@ static string ThreeOfPif();
 static std::vector<int> find_dividers(int x);
 
 static bool is_prime(int x);
+
+static int AriphmeticSum(int n, int res);
+
+static int GeometrySum(int n, int k);
+
+static string naturNum(int n);
+
+static int BellNum(int n, int p);
 
 #endif //LIBRARY_LIBRARY_H

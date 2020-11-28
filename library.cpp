@@ -176,3 +176,91 @@ bool is_prime(int x) {
 
     return true;
 }
+
+
+int AriphmeticSum(int n, int res) {
+    int a1 = 2, d = 2;
+    res = ((2 * a1 + d * (n - 1)) / 2) * n;
+    return res + 1;
+}
+
+
+int GeometrySum(int n, int k) {
+    int r = 1;
+    for (int i = n; i > 0; i--) {
+        if (r > k) r -= k;
+        r *= 2;
+    }
+    return r;
+}
+
+string naturNum(int n) {
+    string res;
+    int lim1 = (n / 3) + 1;
+    int lim2;
+    for (int i = 0; i < lim1; i++) {
+        lim2 = ((n - i) / 2) + 1;
+        for (int j = i; j < lim2; j++) {
+            res += to_string(i) +  " " + to_string(j) + " " + to_string(n - i - j) + " ";
+        }
+    }
+    return res;
+}
+
+
+string CarperRes(int x) {
+    int K = 0, xm = 0, xM = 0, n = 0;
+    int N[11];
+    string res;
+    while (x != 0) {
+        N[n] = abs(x % 10);
+        n++;
+        x /= 10;
+    }
+    bool t = true;
+    for (int i = 0; i < 11 - 1; i++) {
+        for (int j = 0; j < 11 - i - 1; j++) {
+            if (N[j] > N[j + 1]) {
+                swap(N[j], N[j + 1]);
+            }
+        }
+    }
+    int ten = 1;
+    for (int j = 0; j < n - 1; j++) {
+        ten *= 10;
+    }
+    int ten_copy = ten;
+    for (int i = 0; i < n; i++) {
+        xm += N[i] * ten;
+        ten /= 10;
+    }
+    for (int i = n - 1; i >= 0; i--) {
+        xM += N[i] * ten_copy;
+        ten_copy /= 10;
+    }
+    K = xM - xm;
+    int c = 0;
+    int K_tmp = K;
+    while (K_tmp != 0) {
+        c++;
+        K_tmp /= 10;
+    }
+    for (int i = 0; i < n - c; i++) {
+        if (K != 0){
+            res += to_string(K);
+        }
+    }
+    return res;
+}
+
+int BellNum(int n, int p) {
+    int k = 0;
+    for (int i = 1; i <= n; i++) {
+        int fact = i;
+        while (fact) {
+            fact /= p;
+            k += fact;
+        }
+    }
+    return k;
+}
