@@ -33,4 +33,9 @@ static string naturNum(int n);
 
 static int BellNum(int n, int p);
 
+static int ChineeseTheo(int *a, int *n, int *m, int *mi, int i, int size);
+
+static string CarperRes(int x);
+
+double factorial(int num);
 #endif //LIBRARY_LIBRARY_H

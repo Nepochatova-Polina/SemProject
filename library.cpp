@@ -264,3 +264,30 @@ int BellNum(int n, int p) {
     }
     return k;
 }
+
+int ChineeseTheo(int a[], int n[], int m[], int mi[], int i, int size) {
+    int M = 1, Y = 0;
+    for (i = 0; i < size; i++) {
+        M = M * n[i];
+    }
+    for (i = 0; i < size; i++) {
+        m[i] = M / n[i];
+    }
+
+    for (i = 0; i < size; i++) {
+        mi[i] = m[i] % n[i];
+    }
+    for (i = 0; i < size; i++) {
+    }
+
+    return Y = Y % M;
+}
+
+double factorial(int num){
+    if(num < 0)
+        return 0;
+    if (num == 0)
+        return 1;
+    else
+        return num * factorial(num - 1);
+}
