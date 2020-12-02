@@ -3,4 +3,5 @@ project(library)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(library library.cpp library.h)
+set(SOURCE_FILES library.cpp main.cpp)
+add_library(library ${SOURCE_FILES})
